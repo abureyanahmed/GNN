@@ -231,5 +231,5 @@ labels_test[9]=1
 labels_test = np.eye(max(labels_test)+1, dtype=np.int32)[labels_test]
 
 print("\nEvaluate: \n")
-print(g.Evaluate(inp_test[0], arcnode_test[0], labels_test, graphnode_test[0])[0])
+print(g.Evaluate(inp_test, arcnode_test, labels_test)[0])
 
