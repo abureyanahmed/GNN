@@ -1,7 +1,8 @@
 import networkx as nx
 from input_functions import *
 from networkx.algorithms.approximation import steiner_tree
-map_file = "experiment_1/id_to_file.csv"
+#map_file = "experiment_1/id_to_file.csv"
+map_file = "experiment_2/id_to_file.csv"
 
 f = open(map_file, 'r')
 while True:
@@ -35,8 +36,16 @@ while True:
       if not fnd:
         node_str += "non_terminal" + ' ' + "not_in_solution"
     f2.write(node_str+"\n")
+  for n in G.nodes():
+    if n in ST.nodes(): continue
+    node_str = ""
+    node_str += str(n) + ' '
+    node_str += '0' + ' '
+    node_str += "non_terminal" + ' ' + "not_in_solution"
+    f2.write(node_str+"\n")
   edges_to_node = dict()
-  cntr = len(G.nodes())+1
+  #cntr = len(G.nodes())+1
+  cntr = len(G.nodes())
   for u, v in G.edges():
     edges_to_node[str(u)+','+str(v)] = cntr
     node_str = ""
