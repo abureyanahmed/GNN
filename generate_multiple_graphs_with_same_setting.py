@@ -9,8 +9,8 @@ def generate():
   #root_folder = "experiment_ER4"
   #root_folder = "experiment_WS"
   #root_folder = "experiment_WS2"
-  root_folder = "experiment_1"
-  #root_folder = "experiment_2"
+  #root_folder = "experiment_1"
+  root_folder = "experiment_2"
   #root_folder = "experiment_4"
   #call(["rm", "-rf", "Graph_generator/"+experiment_name])
   call(["mkdir", root_folder])
@@ -25,7 +25,8 @@ def generate():
   #number_of_nodes_progression = [100, 100, 100]
   #number_of_nodes_progression = [80, 80, 80]
   #number_of_nodes_progression = [100, 100, 100, 100, 100, 100]
-  number_of_nodes_progression = [100]
+  #number_of_nodes_progression = [100]
+  number_of_nodes_progression = [300]
   #number_of_nodes_progression = [30, 30]
   #number_of_levels = [1, 2, 3]
   #number_of_levels = [2, 3, 4, 5, 6, 7]
@@ -52,7 +53,8 @@ def generate():
   #node_increment = 20
   #number_of_graphs_with_same_setting = 5
   #number_of_graphs_with_same_setting = 10
-  number_of_graphs_with_same_setting = 1
+  #number_of_graphs_with_same_setting = 1
+  number_of_graphs_with_same_setting = 20
   curr_id = 1
   f1 = open(root_folder + '/id_to_file.csv', 'w')
   #f2 = open(root_folder + '/id_to_file_qos.csv', 'w')
@@ -71,7 +73,8 @@ def generate():
          param1[cl] = str(math.sqrt((1+1)*math.log(p)/(math.pi*p)))
         #call(["python3", "graph_non_uniform_generator.py", str(number_of_levels[l]), str(p), root_folder + "/graph_" + common_part_of_name + '_' + str(p) + '_' + str(i), name_of_graph_class_code[cl], param1[cl], param2[cl], node_distribution_in_levels_code[nd]])
         call(["python3", "graph_generator.py", str(number_of_levels[l]), str(p), root_folder + "/graph_" + common_part_of_name + '_' + str(p) + '_' + str(i), name_of_graph_class_code[cl], param1[cl], param2[cl], node_distribution_in_levels_code[nd]])
-        f1.write(str(curr_id) + ';' + 'mlst_exact.py' + ';' + root_folder + ';' + "graph_" + common_part_of_name + '_' + str(p) + '_' + str(i) + ';' + 'output_exact.csv' + ';\n')
+        f1.write(str(curr_id) + ';' + 'mlst_exact.py' + ';' + root_folder + ';' + "graph_" + common_part_of_name + '_' + str(p) + '_' + str(i) + '_train' + ';' + 'output_exact.csv' + ';\n')
+        f1.write(str(curr_id) + ';' + 'mlst_exact.py' + ';' + root_folder + ';' + "graph_" + common_part_of_name + '_' + str(p) + '_' + str(i) + '_test' + ';' + 'output_exact.csv' + ';\n')
         ##f2.write(str(curr_id) + ';' + 'mlst_charikar.py' + ';' + root_folder + ';' + "graph_" + common_part_of_name + '_' + str(p) + '_' + str(i) + ';' + 'output_qos.csv' + ';\n')
         #f2.write(str(curr_id) + ';' + 'mlst_qos.py' + ';' + root_folder + ';' + "graph_" + common_part_of_name + '_' + str(p) + '_' + str(i) + ';' + 'output_qos.csv' + ';\n')
         #f3.write(str(curr_id) + ';' + 'mlst_cmp.py' + ';' + root_folder + ';' + "graph_" + common_part_of_name + '_' + str(p) + '_' + str(i) + ';' + 'output_cmp.csv' + ';\n')
@@ -86,4 +89,3 @@ def generate():
   #f5.close()
 
 generate()
-
