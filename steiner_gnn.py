@@ -110,6 +110,9 @@ for fname in file_names:
 print("Graph files:", [fname for fname in file_names[:5]])
 print("Solution graph files:", sol_file_names[:5])
 
+file_size = 2560
+
+'''
 folder_name = "./exp_BA_GNN_696E/"
 #file_size = 200
 file_size = 2560
@@ -125,6 +128,7 @@ for i in [20,40,60,80]:
 #file_size = 200
 #sol_file_names = ["log_folder_exact/graph_BA_200_1_"+str(i)+"_output.txt" for i in range(1, file_size)]
 #sol_file_names = ["log_folder_cmp/output_"+str(i)+".dat" for i in range(1, 2557)]
+'''
 
 #yfolder_name = "./exp_BA_GNN_696E/"
 #file_size = 150
