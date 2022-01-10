@@ -1,7 +1,7 @@
 # GNN
 
 ## Dataset
-We provide the dataset in the "data/" folder.
+We provide the dataset in the "data/" folder. You can generate more solutions using this code: https://github.com/abureyanahmed/Kruskal_based_approximation
 
 ## Feed forward model
 The feed forward model is provided in the steiner_gnn.py file.
